@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Book</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/estilos.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Zen+Antique+Soft&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../public/img/apple-icon-180x180.png" type="image/x-icon">
+  
+
+    <script>
+    </script>
+</head>
+<body>
+    <header>
+         <section class="card text-bg-light mb-3">
+            <section class="textos-header card-header mb-4"> 
+                <h1>GOODREADS</h1>
+            </section>
+            <!---->
+            <div class="container">
+                <div class="row">
+                    <div class="col col-3 bg-light p-3 border">
+                        <div class="card">
+                            <a href="https://imgur.com/mG0klxc"><img src="<%= book.img %>" class="card-img-top" title="source: imgur.com" /></a>
+                            <div class="card-body">
+                              <h6 class="card-title " style="text-align: center;">Book image</h6>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-9 bg-light p-3 border">
+
+                        <form action="/calificar" id="survey-form" method="post">
+                          <div class="grupo_form">
+                          
+                            <!--BUSCADOR-->
+                            <h4 style="background-color: #e3f2fd;">1. Name.</h4>
+                            <div class="form-outline me-4 mb-5">
+                                <select class="form-select form-select-lg mb-5" aria-label=".form-select-lg example" name="name" id="name">
+                                  <option value="<%= book.name %>"> <%= book.name %> </option>
+                              </select>
+                            </div>
+                            <!--FIN BUSCADOR-->
+                            <!--SELECCIONAR NIVEL-->
+                            <h4 style="background-color: #e3f2fd;">2. Rate</h4>
+
+
+                                  <!--EJEMPLO 2-->
+
+                                    <div class="container" style="text-align: center ;">
+                              
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" id="estrellas" value="5"><!--
+                                            --><label style="font-size:xxx-large;" for="radio1">★</label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" id="estrellas" value="4"><!--
+                                            --><label style="font-size:xxx-large;" for="radio2">★</label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" id="estrellas" value="3"><!--
+                                            --><label style="font-size:xxx-large;" for="radio3">★</label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" id="estrellas" value="2"><!--
+                                            --><label style="font-size:xxx-large;" for="radio4">★</label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" id="estrellas" value="1"><!--
+                                            --><label style="font-size:xxx-large;" for="radio5">★</label>
+                                          </p>
+                                
+                                  </div>
+
+
+                                  <h4 style="background-color: #e3f2fd; ">3. Insert your NUA.</h4>
+                                  <div class=" me-4 mb-5">
+                                      <input type="text" name="nua" id="nua" class="form-control" placeholder="NUA" />
+                                  </div>
+
+                                  <div class=" me-4 mb-5">
+                                    <input type="text" name="idBook" id="idBook" class="form-control" value="<%= book.id %>" hidden/>
+                                  </div>
+                                  
+                                  <div class="d-grid gap-2">
+                                      <button id="buttonSearch" class="btn btn-outline-primary" type="submit">Submit</button>
+                                  </div>
+                                  <!-- EJEMPLO 2-->
+                          </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="container text-center" >
+
+                <b><p style="font-size:x-small;">Department of Multidisciplinary Studies Yuriria.</br>
+        
+                Suburb Yacatitas, C.P 38940</br>
+        
+                Yuriria, Gto., Mexico</br>
+        
+                Tel: +52(445) 458 90 40. Exts: 1703, 1709, 1707 and 1718</br>
+        
+                dem@ugto.mx</p></b>
+        
+            </div> 
+        </section>
+    </header>
+
+
+    </br>
+
+    </br>
+
+
+
+   <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/estilos.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Zen+Antique+Soft&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../public/img/apple-icon-180x180.png" type="image/x-icon">
+
+
+
+
+</head>
+<body>
+    <header>
+         <section class="card text-bg-light mb-3">
+            <section class="textos-header card-header mb-4"> 
+                <h1>DETAILS OF THE RESOURCE USED.</h1>
+            </section>
+            <div class="container d-md-flex justify-content-md-end mb-4">
+                <form name="input" action="\5Populares" method="post">
+                    <input type="text" name="isAudio" id="isAudio" class="form-control" value="<%= isAudio[0] %>" hidden>
+                    <button type="submit" class="btn btn-outline-primary me-2">Most used</button>
+                </form>    
+
+            </div>
+            <!---->
+            <div class="container">
+                <div class="row">
+
+                    <div class="col col-3 bg-light p-3 border">
+                        <div class="card">
+                            <a href="https://imgur.com/mG0klxc"><img src="https://i.imgur.com/WlWMTrB.jpg" class="card-img-top" title="source: imgur.com" /></a>
+                            <div class="card-body">
+                              <!-- <h6 class="card-title " style="text-align: center;">Book image</h6> -->
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-9 bg-light p-3 border">
+                        <!--BUSCADOR-->
+                        <h2 class="move mb-4" style="color: red;">Use only one search option</h2>
+
+                        <form action="Buscar_Libro" id="survey-form" method="post">
+                            <div class="grupo_form">
+
+                                <h4 style="background-color: #e3f2fd; ">1. Search by name of the book.</h4>
+                                <div class=" me-4 mb-5">
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Insert the name of the book" />
+                                </div>
+                                <!--FIN BUSCADOR-->
+                                <!--SELECCIONAR NIVEL-->
+                                <h4 style="background-color: #e3f2fd;">2. Search by book level.</h4>
+                                <select class="form-select form-select-lg mb-5" aria-label=".form-select-lg example" name="level" id="level">
+                                    <option value="">Optional: Search book by english level</option>
+                                    <option value="beginer">Beginer</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                </select>
+
+                                <h4 style="background-color: #e3f2fd;">3. Search book by category.</h4>
+                                <select class="form-select form-select-lg mb-5" aria-label=".form-select-lg example" name="category" id="category">
+                                    <option value="">Optional: Search book by category</option>
+                                    <option value="Reading">Reading</option>
+                                    <option value="other_languages">Other languages</option>
+                                    <option value="gramar">Grammar</option>
+                                    <option value="magazines">Magazines</option>
+                                </select>
+
+                                <div class=" me-4 mb-5">
+                                    <input type="text" name="isAudio" id="isAudio" class="form-control" value="<%= isAudio[0] %>" hidden/>
+                                </div>
+
+                                
+                                    <button type="submit" class="btn btn-outline-primary" id="buttonSearch">Search</button>
+                                
+                            </div>
+                            
+                        </form>
+
+
+                        
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="container text-center" >
+
+                <b><p style="font-size:x-small;">Department of Multidisciplinary Studies Yuriria.</br>
+        
+                Suburb Yacatitas, C.P 38940</br>
+        
+                Yuriria, Gto., Mexico</br>
+        
+                Tel: +52(445) 458 90 40. Exts: 1703, 1709, 1707 and 1718</br>
+        
+                dem@ugto.mx</p></b>
+        
+            </div> 
+
+        </section>  
+
+    </header>
+
+    </br>
+
+    </br>
+
+
+
+   <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</body>
+</html>

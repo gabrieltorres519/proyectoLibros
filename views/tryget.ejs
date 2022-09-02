@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book's Details</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/estilos.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Zen+Antique+Soft&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../public/img/apple-icon-180x180.png" type="image/x-icon">
+  
+
+
+</head>
+<body>
+    <header>
+        <section class="card text-bg-light mb-3">
+            <section class="textos-header card-header mb-4"> 
+                <h1>VIEWING BOOK DETAILS.</h1>
+            </section>
+        <% if(Array.isArray(libro)){ %>
+            <% for(let i = 0; i<libro.length; i++){ %>
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-3 bg-light p-3 border">
+                            <div class="card">
+                                <a href="https://imgur.com/mG0klxc"><img src="<%= libro[i].img %>" title="source: imgur.com" /></a>
+                                    <div class="card-body">
+                                    <h6 class="card-title " style="text-align: center;">Book image</h6>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-9 bg-light p-3 border">
+                            <form action="agrega_lectura" id="survey-form" method="post">
+                                <div class="grupo_form">
+
+                                    <div class=" me-4 mb-5">
+                                        <input type="text" name="img" id="img" class="form-control" value="<%= libro[i].img %>" hidden/>
+                                    </div>
+
+                                    <div class=" me-4 mb-5">
+                                        <input type="text" name="idBook" id="idBook" class="form-control" value="<%= libro[i].id %>" hidden/>
+                                    </div>
+
+                                    <h4 style="background-color: #e3f2fd;">Name</h4>
+                                        <select class="form-select form-select-lg mb-5" aria-label=".form-select-lg example" name="name" id="name">
+                                            <option value="<%= libro[i].name %>"> <%= libro[i].name %> </option>
+                                        </select>
+                                        <!--FIN BUSCADOR-->
+                                        <!--SELECCIONAR NIVEL-->
+                                        <h4 style="background-color: #e3f2fd;">Level</h4>
+                                        <select class="form-select form-select-lg mb-5" aria-label=".form-select-lg example" name="level" id="level">
+                                            <option value="<%= libro[i].level %>"> <%= libro[i].level %> </option>
+                                        </select>
+                                        <h4 style="background-color: #e3f2fd;">Times this book has been used</h4>
+                                            <select class="form-select form-select-lg mb-5" aria-label=".form-select-lg example" name="numReads" id="numReads">
+                                                <option value="<%= libro[i].numReads %>"> <%= libro[i].numReads %> </option>
+                                            </select>
+
+                                         <div class="container" style="text-align: center ;">
+                              
+                                                <p class="clasificacion">
+
+                                                    <% switch (Math.round(libro[i].PromedioCalifs)){ case 1:%>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio1">★</label>
+                                                        <% break;
+                                                        
+                                                        case 2:%>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio1">★</label>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio2">★</label>
+                                                        <% break;
+                                                        
+                                                        case 3:%>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio1" >★</label>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio2" >★</label>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio3" >★</label>
+                                                        <% break;
+                                                        
+                                                        case 4:%>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio1">★</label>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio2">★</label>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio3">★</label>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio4">★</label>
+
+                                                        <% break;
+                                                        
+                                                        case 5:%>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio1">★</label>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio2">★</label>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio3">★</label>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio4">★</label>
+                                                            <label style="font-size:xxx-large; color: #ff8c00;" for="radio5">★</label>
+                                                        <% break;
+                                                        
+                                                        default:%>
+                                                            ...
+                                                        <% break; }%>
+         
+                                                </p>
+                                        </div>
+
+                                        
+                                    <div class="container">
+                                            <div class="row">
+                                                <div class="col-6 sm-3 text-center">
+                                                    <% if(libro.length == 1) {%>
+                                                        <h4 style="background-color: #e3f2fd;">Is it the book you used?</h4>
+                                                                <button type="submit" class="btn-lg btn-enviar btn btn-outline-primary me-2" id="buttonSearch" >Record reading</button>
+                                                                <!-- <button type="submit" class="btn-enviar" id="buttonSearch" >Registrar Lectura</button> -->
+                                                    <%}%>
+                                                </div>
+
+                                                <div class="col-6 sm-3 text-center">
+                                                    <h4 style="background-color: #e3f2fd;"> Back to Search</h4>
+
+                                                        <!-- <h4 style="background-color: #e3f2fd;">Incorrect data</h4> -->
+                                                                <a href="inicio" class="btn-lg btn btn-outline-danger me-2" type="button">Back</a>
+                                                </div>
+                                            </div>
+                                        </div>                         
+                                                        
+                                </div>
+                        
+                            </form>
+                        </div>
+                    </div>
+                </div> 
+            <% } %>
+
+        <% }else{ %>
+        
+            <h1>Datos incorrectos</h1>
+            <div class="col-6 sm-3 text-center">
+                <!-- <h4 style="background-color: #e3f2fd;">Incorrect data</h4> -->
+                 <a href="inicio" class="btn-lg btn btn-outline-danger me-2" type="button">Back to book search</a>
+            </div>
+
+        <% } %>
+
+        <% if(libro.length == 0){ %>
+            <h1 style="text-align: center;">Incorrect data.</h1>
+            <h3 style="text-align: center;">You may be searching a book or audiobook that is not in CAADI.</h3>
+            <br>
+            <div style="position: relative; top: 0px; bottom: 700px; left: 245px;">
+
+                <div class="col-6 sm-3 text-center" >
+                    <!-- <h4 style="background-color: #e3f2fd;">Incorrect data</h4> -->
+                     <a href="inicio" class="btn-lg btn btn-outline-danger me-2" type="button">Back to book search</a>
+                </div>
+
+            </div>
+
+        <% } %>
+        <br>
+        <br>
+
+        <div class="container text-center" >
+
+            <b><p style="font-size:x-small;">Department of Multidisciplinary Studies Yuriria.</br>
+    
+            Suburb Yacatitas, C.P 38940</br>
+    
+            Yuriria, Gto., Mexico</br>
+    
+            Tel: +52(445) 458 90 40. Exts: 1703, 1709, 1707 and 1718</br>
+    
+            dem@ugto.mx</p></b>
+    
+        </div>  
+
+
+        </section>
+
+    </header>
+
+
+
+    </br>
+
+    </br>
+
+
+   <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</body>
+</html>
