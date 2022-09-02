@@ -56,7 +56,7 @@ CREATE TABLE VisitBook (
 7. Define the port you want to use in the server.js app.set('port', process.env.PORT || 3003).
 8. Insert npm run start.
 
-![Imgur](https://i.imgur.com/f1fp9QQ.png)
+
 
 
 
